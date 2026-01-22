@@ -10,12 +10,7 @@ EUCLID-X is a generative sequencer built with **JavaScript** that utilizes the E
 
 ## 🚀 Key Features
 
-- **Real-Time Generative parameters:**
-  - **Steps ($n$):** The length of the loop (e.g., 16 steps).
-  - **Pulses ($k$):** The number of active hits.
-  - **Rotation:** Offsetting the start point to create syncopated variations.
-- **Polyrhythmic Capabilities:** Run multiple Euclidean sequencers of different lengths (e.g., 4 against 5) to create evolving "Phase Music."
-- **Visual Sequencer Interface:** A dynamic SVG/Canvas-based radial visualization that lights up active nodes in real-time.
+
 
 ## 🧠 Concepts Explored
 

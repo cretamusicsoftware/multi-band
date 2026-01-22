@@ -20,3 +20,5 @@ TRI-COMP is a professional-grade dynamics processor built with the **Web Audio A
 - Crossover Filtering
 - Dynamic Range Compression
 - Audio Metering Logic
+
+![preview img](/TRI-COMP-Multi-Band-Mastering.png)

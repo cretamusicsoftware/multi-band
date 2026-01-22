@@ -1,22 +1,22 @@
-# EUCLID-X: Algorithmic Rhythm Generator
+# TRI-COMP: Multi-Band Mastering Compressor
 
-EUCLID-X is a generative sequencer built with **JavaScript** that utilizes the Euclidean Algorithm to distribute musical events as evenly as possible over a set period of time. It demonstrates how simple mathematical constraints can generate complex, syncopated, and "musical" rhythms found in Techno, Afro-Cuban, and Jazz music.
+TRI-COMP is a professional-grade dynamics processor built with the **Web Audio API**. It splits the audio signal into three discrete frequency bands (Low, Mid, High) and applies independent compression to each. This topology allows for transparent mastering and precise control over the tonal balance of a mix.
 
-## 🛠 Algorithmic Logic
-
-- **Bjorklund’s Algorithm:** Implements the recursive logic used to calculate the Greatest Common Divisor (GCD). In a musical context, it solves the problem: _"How do I fit $k$ beats into $n$ steps as evenly as possible?"_
-- **Circular Data Structures:** Rhythms are treated as cyclical arrays. Visualized as a circle (clock-face), where the sequence wraps around seamlessly.
-- **Bitwise/Array Manipulation:** The core engine recursively folds binary arrays (1s and 0s) to determine the optimal spacing between active steps.
+## 🛠 DSP Architecture
+- **3-Way Crossover Network:** Utilizes parallel `BiquadFilterNode` instances to isolate frequency ranges:
+    - **Low:** < 200Hz (Lowpass)
+    - **Mid:** 200Hz - 2.5kHz (Bandpass/Wide Q)
+    - **High:** > 2.5kHz (Highpass)
+- **Discrete Compression Engines:** Each frequency band is routed to a dedicated `DynamicsCompressorNode` with independent Threshold and Ratio controls.
+- **Gain Reduction Metering:** Real-time visualization of compression intensity using the `compressor.reduction` float property, animated via `requestAnimationFrame`.
 
 ## 🚀 Key Features
-
-
+- **Targeted Dynamics Control:** "Squash" the kick drum without affecting the vocals, or tame harsh cymbals without losing bass energy.
+- **Visual Feedback:** Individual gain reduction meters for each band provide immediate visual confirmation of signal processing.
+- **Latency-Free Operation:** Zero-latency parallel routing suitable for real-time mastering applications.
 
 ## 🧠 Concepts Explored
-
-- Generative Music & Algorithmic Composition
-- Greatest Common Divisor (GCD) Logic
-- Array Recursion & Sorting
-- Scheduler & Lookahead Timing (Web Audio API)
-
-![preview img](/TRI-COMP-Multi-Band-Mastering.png)
+- Parallel Signal Processing
+- Crossover Filtering
+- Dynamic Range Compression
+- Audio Metering Logic
